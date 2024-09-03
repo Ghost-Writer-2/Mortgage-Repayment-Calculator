@@ -1,0 +1,31 @@
+@import "config";
+@import "calculator";
+
+body {
+  @include flexCenter(column, center, center);
+  min-height: 100vh;
+  background-color: $slate-300;
+}
+
+main {
+  @include flexCenter(row, center, center);
+}
+
+section {
+  @include flexCenter(row, center, center);
+  background-color: white;
+  height: 80vh;
+  width: auto;
+}
+
+.card {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+
+  &--result {
+    @include flexCenter(column, center, center);
+    background-color: $slate-900;
+    border-bottom-left-radius: 10vh;
+  }
+}

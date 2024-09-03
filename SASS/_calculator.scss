@@ -1,0 +1,108 @@
+@import "config";
+
+input[type=number] {
+  font-weight: 700;
+  padding: 1rem;
+  // border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input, 
+.radio_btn {
+  border-radius: 4px;
+}
+
+.container {
+  position: relative;
+  @include flexCenter(row);
+  margin-bottom: 20px;
+
+  &__first {
+    flex-direction: column;
+
+    & span {
+      position: absolute;
+      top: 1.3rem;
+      left: 0.07rem;
+      
+      color: $slate-700;
+      font-weight: 900;
+      font-size: 1.5rem;
+      background-color: hsl(147, 21%, 92%);
+      border-radius: 4px 0 0 4px;
+      padding: 0.69rem 1.2rem;
+
+      &.active {
+        background-color: $lime;
+      }
+    }
+
+    & input {
+      border: 2px solid $slate-100;
+      padding-left: 4rem;
+      font-size: 1rem;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        border: 2px solid $lime;
+      }
+    }
+  }
+
+  &__second {
+    gap: 5%;
+
+    .second-div > input {
+      width: 100%;
+    }
+
+  }
+
+  &__third {
+    display: default;
+    width: 100%;
+  }
+}
+
+.second-div {
+  & span {
+    position: absolute;
+    top:1.7rem;
+    right:0.05rem;
+
+    color:var(--slate-700);
+    font-weight: 700;
+    background-color: var(--slate-100);
+    border-radius: 0 4px 4px 0;
+    padding:0.47rem 0.7rem;
+  }
+}
+
+
+.btn-center {
+  @include flexCenter(row, center, center);
+  gap: 10px;
+  background-color: $lime;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px;
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+}
+
+.radio_btn {
+  border: 1px solid black;
+  @include flexCenter(row, center, start);
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 14px;
+}
