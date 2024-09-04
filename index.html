@@ -18,7 +18,6 @@
 </head>
 <body>
   <main>
-    <section>
       <div class="card card--calculator">
         <form action="#">
           <div class="container container__title">
@@ -36,16 +35,20 @@
             </div>
   
             <div class="container container__second">
-              <div class="second-div">
+              <div class="container__second__div">
                 <label for="term">Mortgage Term</label>
-                <input type="number" name="mortgage-term" id="term">
-                <span>years</span>
+                <div class="container__second__div__input-container">
+                  <input type="number" name="mortgage-term" id="term">
+                  <span class="years">years</span>
+                </div>
               </div>
   
-              <div class="second-div">
+              <div class="container__second__div">
                 <label for="rate">Interest Rate</label>
-                <input type="number" name="interest-rate" id="rate">
-                <span>%</span>
+                <div class="container__second__div__input-container">
+                  <input type="number" name="interest-rate" id="rate">
+                  <span class="percent">%</span>
+                </div>
               </div>
             </div>
             <div class="container container__third">
@@ -72,10 +75,15 @@
         </form>
       </div>
       <div class="card card--result">
-        <img src="/assets/images/illustration-empty.svg" alt="">
+        <div class="card--result__empty">
+          <img src="/assets/images/illustration-empty.svg" alt="">
+          <h2> Results shown here</h2>
+          <p> 
+            Complete the form and click “calculate repayments” to see what 
+            your monthly repayments would be.
+          </p>
+        </div>
       </div>
-    </section>
-  
   </main>
 
   <footer>

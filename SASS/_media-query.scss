@@ -1,0 +1,30 @@
+@media (max-width: 1000px) {
+
+  main {
+    grid-template-columns: 100%;
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  .card {
+    &--result {
+      @include flexCenter(column, center, center);
+      background-color: $slate-900;
+      border-radius: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .container {
+    &__title {
+      @include flexCenter(column, none, space-between);
+    }  
+
+    &__second {
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: 20px;
+    }
+  }
+}

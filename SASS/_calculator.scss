@@ -1,8 +1,8 @@
 @import "config";
 
 input[type=number] {
-  font-weight: 700;
-  padding: 1rem;
+  @include font-weight(700);
+  padding: 0.8rem;
   // border: none;
 }
 
@@ -14,7 +14,15 @@ input::-webkit-inner-spin-button {
 
 input, 
 .radio_btn {
+  cursor: pointer;
   border-radius: 4px;
+}
+
+label,
+legend {
+  @include font-weight();
+  color: $slate-700;
+  margin-bottom: 8px;
 }
 
 .container {
@@ -22,20 +30,37 @@ input,
   @include flexCenter(row);
   margin-bottom: 20px;
 
+  &__title {
+    @include flexCenter(row, none, space-between);
+    margin-bottom: 30px;
+
+    h2 {
+      @include font-weight(900);
+      color: $slate-900;
+    }
+
+    p {
+      text-align: center;
+      @include flexCenter(row, end, none);
+      text-decoration: underline;
+      @include font-weight();
+      color: $slate-700;
+    }
+  }
+
   &__first {
     flex-direction: column;
 
     & span {
       position: absolute;
-      top: 1.3rem;
-      left: 0.07rem;
+      bottom: 0.06rem;
+      left: 0.056rem;
       
       color: $slate-700;
-      font-weight: 900;
-      font-size: 1.5rem;
-      background-color: hsl(147, 21%, 92%);
-      border-radius: 4px 0 0 4px;
-      padding: 0.69rem 1.2rem;
+      @include font-weight(900);
+      font-size: 1.3rem;
+      background-color: $slate-50;
+      padding: 0.6rem 1rem;
 
       &.active {
         background-color: $lime;
@@ -43,55 +68,77 @@ input,
     }
 
     & input {
-      border: 2px solid $slate-100;
+      border: 1px solid $slate-100;
+      @include font-weight(700);
       padding-left: 4rem;
       font-size: 1rem;
       width: 100%;
 
       &:focus {
         outline: none;
-        border: 2px solid $lime;
+        border: 1px solid $lime;
       }
     }
   }
 
   &__second {
-    gap: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
 
-    .second-div > input {
-      width: 100%;
+    &__div {
+      @include flexCenter(column, none, center);
+
+      &__input-container {
+        position: relative;
+
+        input {
+          border: 1px solid $slate-100;
+          width: 100%;
+          @include font-weight(700);
+          font-size: 1rem;
+
+          &:focus {
+            outline: none;
+            border: 1px solid $lime;
+          }
+        }
+
+        span {
+          position: absolute;
+          right: 0.07rem;
+          top: 0.056rem;
+
+          color: $slate-700;
+          @include font-weight(700);
+          background-color: $slate-50;
+          border-radius: 0 4px 4px 0;
+          padding: 0.8rem 1rem;
+        }
+      }
     }
 
   }
 
+
   &__third {
-    display: default;
     width: 100%;
   }
 }
 
-.second-div {
-  & span {
-    position: absolute;
-    top:1.7rem;
-    right:0.05rem;
-
-    color:var(--slate-700);
-    font-weight: 700;
-    background-color: var(--slate-100);
-    border-radius: 0 4px 4px 0;
-    padding:0.47rem 0.7rem;
-  }
-}
 
 
 .btn-center {
   @include flexCenter(row, center, center);
+  @include font-weight(900);
+  font-size: 0.9rem;
+  color: $slate-900;
   gap: 10px;
   background-color: $lime;
-  padding: 15px 20px;
+  padding: 14px 25px;
   border: none;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 fieldset {
@@ -100,9 +147,39 @@ fieldset {
 }
 
 .radio_btn {
-  border: 1px solid black;
+  border: 1px solid $slate-100;
   @include flexCenter(row, center, start);
+  gap: 10px;
   cursor: pointer;
   margin-bottom: 10px;
-  padding: 14px;
+  padding: 0.7rem;
+  // font-weight: 700;
+  @include font-weight(700);
+  color: $slate-900;
+
+  input {
+    display: grid;
+    place-content: center;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $slate-700;
+    border-radius: 100%;
+
+    &::before  {
+      content: '';
+      width: 9px;
+      height: 9px;
+      border-radius: 100%;
+    }
+
+    &:checked {
+      border-color: $lime;
+
+      &::before {
+        content: '';
+        background-color: $lime;
+      }
+    }
+  }
 }

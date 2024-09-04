@@ -16,6 +16,7 @@ $red: hsl(4, 69%, 50%);
 
 // neutral
 $white: hsl(0, 0%, 100%);
+$slate-50: hsl(147, 21%, 92%);
 $slate-100: hsl(203, 41%, 72%);
 $slate-300: hsl(203, 41%, 72%);
 $slate-500: hsl(200, 26%, 54%);
@@ -27,4 +28,9 @@ $slate-900: hsl(202, 55%, 16%);
   flex-direction: $flex-direction;
   align-items: $align;
   justify-content: $justify;
+};
+
+
+@mixin font-weight($value: 500) {
+  font-weight: $value;
 };

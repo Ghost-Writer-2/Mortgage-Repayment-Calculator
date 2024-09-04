@@ -1,0 +1,16 @@
+.card--result {
+  &__empty {
+    text-align: center;
+    color: $white;
+
+    h2  {
+      margin-bottom: 20px;
+      @include font-weight(500);
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $slate-100;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 @import "config";
 @import "calculator";
+@import "results";
 
 body {
   @include flexCenter(column, center, center);
@@ -8,24 +9,30 @@ body {
 }
 
 main {
-  @include flexCenter(row, center, center);
-}
-
-section {
-  @include flexCenter(row, center, center);
+  display: grid;
+  grid-template-columns: 50% 50%;
   background-color: white;
-  height: 80vh;
-  width: auto;
+  height: auto;
+  width: 950px;
+  border-radius: 15px;
 }
 
 .card {
-  width: 50%;
-  height: 100%;
   padding: 20px;
 
+  &--calculator {
+    padding-left: 30px;
+    padding-top: 50px;
+  }
+
   &--result {
+    padding: 60px;
     @include flexCenter(column, center, center);
     background-color: $slate-900;
-    border-bottom-left-radius: 10vh;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 9vh;
   }
 }
+
+@import 'media-query';
