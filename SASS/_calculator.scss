@@ -182,7 +182,7 @@ fieldset {
 // radio btn div
 .radio_btn {
   border: 1px solid $slate-100;
-  @include flexCenter(row, center, start);
+  @include flexCenter(row, center, flex-start);
   gap: 10px;
   cursor: pointer;
   margin-bottom: 10px;
@@ -192,18 +192,20 @@ fieldset {
   color: $slate-900;
 
   input {
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     appearance: none;
-    width: 15px;
-    height: 15px;
+    width: 19px;
+    height: 19px;
     border: 1px solid $slate-700;
     border-radius: 100%;
 
     &::before  {
       content: '';
-      width: 9px;
-      height: 9px;
+      text-align: center;
+      width: 11px;
+      height: 11px;
       border-radius: 100%;
     }
 

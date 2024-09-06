@@ -281,7 +281,7 @@ fieldset {
           align-items: center;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
   gap: 10px;
   cursor: pointer;
   margin-bottom: 10px;
@@ -291,22 +291,29 @@ fieldset {
 }
 
 .radio_btn input {
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 19px;
+  height: 19px;
   border: 1px solid #4e6e7e;
   border-radius: 100%;
 }
 
 .radio_btn input::before {
   content: '';
-  width: 9px;
-  height: 9px;
+  text-align: center;
+  width: 11px;
+  height: 11px;
   border-radius: 100%;
 }
 
