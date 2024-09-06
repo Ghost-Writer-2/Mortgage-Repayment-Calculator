@@ -2,6 +2,11 @@
 @import "calculator";
 @import "results";
 
+// for styles to the left container of the page go to _calculator.scss
+// for styles to the right container of the page go to _results.scss
+// for media query styles go to _media-query.scss
+// for reset styles go to _config.scss
+
 body {
   @include flexCenter(column, center, center);
   min-height: 100vh;

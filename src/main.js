@@ -11,7 +11,7 @@
     showError();
   }, true)
 
-  // checks form before submit
+  /************************************** form validation section ***************************/
   FORM.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -50,7 +50,9 @@
     })
   })
 
+  /****************************************** error function *****************************/
   function showError() {
+
     // number inputs
     NUMBER_INPUTS.forEach((input) => {
       const error_text = document.querySelector(`.${input.id}-error-text`);
@@ -87,7 +89,7 @@
   }
 
 
-
+  /*************************************** green thingy ***************************************/
   function green(element) {
     const label = document.querySelector(`.js-${element.id}`);
     const repayment = document.querySelector(`.js-${RADIO_BTN[0].id}`);
@@ -106,6 +108,7 @@
     }
   }
 
+  /******************************************display result **************************************/
   function displayResult() {
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
@@ -158,7 +161,7 @@
     }
   }
 
-// calculation module
+  /**************************************************** calculation functions  *********************************************/
   var calculate = {
 
     interestOnly: function() {
@@ -189,6 +192,7 @@
   var repayment = calculate.repayment;
   var totalPayment = calculate.totalPayment;
 
+  /***************************************************clear all inputs ******************************************/
   clear_all.addEventListener("click", () => {
     NUMBER_INPUTS.forEach(input => {
       input.value = '';

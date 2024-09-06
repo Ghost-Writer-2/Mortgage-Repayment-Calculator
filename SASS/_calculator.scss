@@ -26,6 +26,7 @@ legend {
   margin-bottom: 8px;
 }
 
+// container styles
 .container {
   position: relative;
   @include flexCenter(row);
@@ -50,6 +51,7 @@ legend {
     }
   }
 
+  // first input div
   &__first {
     flex-direction: column;
     margin-bottom: 8px;
@@ -95,6 +97,7 @@ legend {
     }
   }
 
+  // second input div
   &__second {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -145,6 +148,7 @@ legend {
   }
 
 
+  // third input div
   &__third {
     width: 100%;
 
@@ -155,7 +159,7 @@ legend {
 }
 
 
-
+// submit button
 .btn-center {
   @include flexCenter(row, center, center);
   @include font-weight(900);
@@ -169,11 +173,13 @@ legend {
   cursor: pointer;
 }
 
+// radio btn fieldset
 fieldset {
   border: none;
   width: 100%;
 }
 
+// radio btn div
 .radio_btn {
   border: 1px solid $slate-100;
   @include flexCenter(row, center, start);
@@ -212,11 +218,13 @@ fieldset {
   }
 }
 
+// green color thingy
 .green {
   background-color: rgba(215, 218, 47, 0.3);
   border-color: $lime;
 }
 
+// error styles
 .error {
   margin-top: 10px;
   color: $red;
