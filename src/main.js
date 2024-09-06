@@ -165,7 +165,7 @@
       var r = NUMBER_INPUTS[2].value / 100;
       var p = NUMBER_INPUTS[0].value;
       
-      return (r * p) / 12;
+      return parseFloat(((r * p) / 12) .toFixed(2));
     },
 
     repayment: function() {
