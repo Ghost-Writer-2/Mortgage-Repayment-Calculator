@@ -69,7 +69,6 @@
 
       if (input.validity.valueMissing) {
         error();
-        console.log('missing');
       }
 
       if (input.validity.rangeOverflow || input.validity.rangeUnderflow) {
@@ -99,12 +98,10 @@
     
     if (repayment.classList.contains('green') && element === RADIO_BTN[0]) {
       interest.classList.remove('green');
-      console.log('true');
     } 
 
     if (interest.classList.contains('green') && element === RADIO_BTN[1]) {
       repayment.classList.remove('green');
-      console.log('interest: true');
     }
   }
 
