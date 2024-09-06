@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 * {
   margin: 0;
@@ -28,12 +28,11 @@ $slate-900: hsl(202, 55%, 16%);
   flex-direction: $flex-direction;
   align-items: $align;
   justify-content: $justify;
-};
-
+}
 
 @mixin font-weight($value: 500) {
   font-weight: $value;
-};
+}
 
 .hide {
   display: none;

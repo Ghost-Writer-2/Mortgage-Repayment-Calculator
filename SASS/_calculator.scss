@@ -1,7 +1,6 @@
 @import "config";
 
-
-input[type=number] {
+input[type="number"] {
   @include font-weight(700);
   padding: 0.8rem;
   // border: none;
@@ -13,7 +12,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input, 
+input,
 .radio_btn {
   cursor: pointer;
   border-radius: 4px;
@@ -65,7 +64,7 @@ legend {
       top: 0;
       bottom: 0;
       left: 0;
-      
+
       color: $slate-700;
       @include font-weight(900);
       font-size: 1.3rem;
@@ -147,7 +146,6 @@ legend {
     }
   }
 
-
   // third input div
   &__third {
     width: 100%;
@@ -157,7 +155,6 @@ legend {
     }
   }
 }
-
 
 // submit button
 .btn-center {
@@ -202,8 +199,8 @@ fieldset {
     border: 1px solid $slate-700;
     border-radius: 100%;
 
-    &::before  {
-      content: '';
+    &::before {
+      content: "";
       margin: auto 0;
       width: 80%;
       height: 80%;
@@ -214,7 +211,7 @@ fieldset {
       border-color: $lime;
 
       &::before {
-        content: '';
+        content: "";
         background-color: $lime;
       }
     }

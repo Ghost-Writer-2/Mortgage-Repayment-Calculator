@@ -30,7 +30,7 @@
   display: none;
 }
 
-input[type=number] {
+input[type="number"] {
   font-weight: 700;
   padding: 0.8rem;
 }
@@ -311,7 +311,7 @@ fieldset {
 }
 
 .radio_btn input::before {
-  content: '';
+  content: "";
   margin: auto 0;
   width: 80%;
   height: 80%;
@@ -323,7 +323,7 @@ fieldset {
 }
 
 .radio_btn input:checked::before {
-  content: '';
+  content: "";
   background-color: #d7da2f;
 }
 
@@ -465,6 +465,20 @@ main {
   border-bottom-left-radius: 9vh;
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+footer {
+  position: absolute;
+  bottom: 1px;
+}
+
 @media (max-width: 1000px) {
   main {
     -ms-grid-columns: 100%;
@@ -527,6 +541,11 @@ main {
   }
   .container__last .btn-center {
     width: 100%;
+  }
+  footer {
+    position: relative;
+    bottom: 1px;
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
