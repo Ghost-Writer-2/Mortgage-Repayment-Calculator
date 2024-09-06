@@ -1,50 +1,76 @@
-# Calculator Project 🧮
-  Welcome to my Calculator JavaScript practice project. We're happy to have you here 😄👀
+# Frontend Mentor - Mortgage repayment calculator solution
 
-# 📋 Table of Contents
-  * [Project Overview](#project-overview)
-  * [Technologies Used](#technology-used)
-  * [My Approach](#my-approach)
-  * [Techniques Applied](#techniques-applied)
-  * [Problems Encountered](#problems-encountered)
-  * [Areas the Code can Be Improved](#areas-to-improve)
-  * [Appeal for Tips](#my-appeal-for-tips-and-advices)
-  * [Live Preview](#live-preview)
+This is a solution to the [Mortgage repayment calculator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-# 👀 Project Overview 
-   This is just a normal Calculator game made by an amatuer for practice purposes. In this project I applied everything I have learned so far which are just beginner concepts of JavaScript. I know there are better ways to approach this project and I will continue updating the project as I learn more advanced concepts. I am also willing to learn from whatever advices and obdervations you may have for me regarding this project and my learning.
+## Table of contents
 
-## 🕹️ Technologies Used 
-  * HTML5
-  * CSS3
-  * JavaScript (Vanilla Js)
-
-## 🔢 My Approach
-  - When a button (that contains a number or simple arithmetic operator) is clicked the expression is collected and stored in the ``expression`` variable 
-  - This variable is then evaluated when the equal button is pressed.
-  - When the backspace button is clicked, the ``replace()`` replaces the last character in the ``expression`` variable with an empty string.
-  - If the eval button is clicked, ``expression`` becomes equal to ``result``
-  - Visual feedback is given (result is displayed)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 
-## 📒 Techniques Applied 
-  In this project I attempted to create a Calculator game with vanilla js as a learning project using the following concepts
-  - I the ``||`` operator shorthand in place of an if statement
-  - I used the ``eval()`` to evaluate expressions.
-  - I used eventlisteners to run functions.
-  - I used the replace() to create a backspace button.
+## Overview
 
-## 🌩️ Problems Encountered
-  The drawback I am currently facing is adding a keydown event handler to the body to that will run the backspace function (``del()``). 
-  I will look for methods to solve this now
+### The challenge
 
-## 🐣 Areas to Improve 
-  - Add more functionalities like a memory to store past calculations, double display i.e display both expression and answer simultaneously on the screen.
+Users should be able to:
 
-## 🌱 My Appeal for Tips and Advices 
-  I would really appreciate every tip offered on how to solve the problems I'm facing in the project. I will also appreciate tips on how I can write a more maintainable and clean code.
+- Input mortgage information and see monthly repayment and total repayment amounts after submitting the form
+- See form validation messages if any field is incomplete
+- Complete the form only using their keyboard
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-## 📱 Live Preview
 
- ### [Live Preview](https://ghost-writer-2.github.io/Calculator-project/)
+### Links
+
+- Solution URL: [Github](https://github.com/Ghost-Writer-2/Mortgage-Repayment-Calculator)
+- Live Site URL: [Live Preview](https://ghost-writer-2.github.io/Mortgage-Repayment-Calculator/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- SASS
+
+### What I learned
+
+I used to opportunity to practice using SASS and I learned how to create a mini CSS library. I learned how to style both the parent input element and it's sibling on focus.
+Got to practice javascript more too. Also I think my responsive design skill is levelling up. 
+
+```css
+.input:focus {
+  /* style goes here */
+}
+
+input:focus + <element> {
+  /* style goes here */
+}
+```
+```js
+// removes default html error styles
+document.addEventListener("invalid", (e) => {e.preventDefault()}, true)
+```
+
+### Continued development
+
+I want to keep learning more advanced Javascript concepts and also keep getting better at css. 
+
+## Author
+
+- Frontend Mentor - [@Ghost-writer-2](https://www.frontendmentor.io/profile/ghost-writer-2)
+
+## Acknowledgments
+
+I'd like to thank Carlos. He helped me overcome a really big setback I encountered on this project. Thank you Carlos 💪
 
