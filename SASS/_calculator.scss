@@ -1,5 +1,6 @@
 @import "config";
 
+
 input[type=number] {
   @include font-weight(700);
   padding: 0.8rem;
@@ -45,38 +46,51 @@ legend {
       text-decoration: underline;
       @include font-weight();
       color: $slate-700;
+      cursor: pointer;
     }
   }
 
   &__first {
     flex-direction: column;
+    margin-bottom: 8px;
+
+    & .icon-container {
+      position: relative;
+    }
 
     & span {
       position: absolute;
-      bottom: 0.06rem;
-      left: 0.056rem;
+      top: 0;
+      bottom: 0;
+      left: 0;
       
       color: $slate-700;
       @include font-weight(900);
       font-size: 1.3rem;
+      border-radius: 4px 0 0 4px;
       background-color: $slate-50;
-      padding: 0.6rem 1rem;
-
-      &.active {
-        background-color: $lime;
-      }
+      border: 1px solid $slate-100;
+      border-right: none;
+      padding: 0.8rem 1rem;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     & input {
       border: 1px solid $slate-100;
       @include font-weight(700);
       padding-left: 4rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
       width: 100%;
 
       &:focus {
         outline: none;
         border: 1px solid $lime;
+
+        & + span {
+          background-color: $lime;
+          border-color: $lime;
+          color: $slate-900;
+        }
       }
     }
   }
@@ -84,6 +98,7 @@ legend {
   &__second {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     column-gap: 20px;
 
     &__div {
@@ -101,28 +116,41 @@ legend {
           &:focus {
             outline: none;
             border: 1px solid $lime;
+
+            & + span {
+              background-color: $lime;
+              border-color: $lime;
+              color: $slate-900;
+            }
           }
         }
 
         span {
           position: absolute;
-          right: 0.07rem;
-          top: 0.056rem;
+          right: 0;
+          top: 0;
+          bottom: 0;
 
           color: $slate-700;
           @include font-weight(700);
           background-color: $slate-50;
           border-radius: 0 4px 4px 0;
           padding: 0.8rem 1rem;
+          border: 1px solid $slate-100;
+          border-left: none;
+          transition: background-color 0.3s, color 0.3s;
         }
       }
     }
-
   }
 
 
   &__third {
     width: 100%;
+
+    .error {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -182,4 +210,15 @@ fieldset {
       }
     }
   }
+}
+
+.green {
+  background-color: rgba(215, 218, 47, 0.3);
+  border-color: $lime;
+}
+
+.error {
+  margin-top: 10px;
+  color: $red;
+  font-size: 0.9rem;
 }

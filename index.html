@@ -1,73 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="./styles/main.css">
-  
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <main>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
       <div class="card card--calculator">
-        <form action="#">
+        <form class="js-form" action="#">
           <div class="container container__title">
             <h2>Mortgage Calculator</h2>
-            <p>Clear All</p>
+            <p class="js-clear-all">Clear All</p>
           </div>
-  
+
           <div>
             <div class="container container__first">
               <label for="amount">Mortgage Amount</label>
               <div class="icon-container">
-                <input type="number" name="mortgage-amount" class="mortgage-amount" id="amount">
-                <span>£</span>
+                <input
+                  class="js-number-input"
+                  type="number"
+                  name="mortgage-amount"
+                  class="mortgage-amount"
+                  id="amount"
+                  max="1,000,000,000"
+                  min="1"
+                  required
+                />
+                <span class="amount-js">£</span>
               </div>
+             
+              <p class="amount-error-text error hide"></p>
             </div>
-  
+
             <div class="container container__second">
               <div class="container__second__div">
                 <label for="term">Mortgage Term</label>
                 <div class="container__second__div__input-container">
-                  <input type="number" name="mortgage-term" id="term">
-                  <span class="years">years</span>
+                  <input
+                    class="js-number-input"
+                    type="number"
+                    name="mortgage-term"
+                    id="term"
+                    max="50"
+                    min="1"
+                    required
+                  />
+                  <span class="term-js years">years</span>
                 </div>
+                <p class="term-error-text error hide"></p>
               </div>
-  
+
               <div class="container__second__div">
                 <label for="rate">Interest Rate</label>
                 <div class="container__second__div__input-container">
-                  <input type="number" name="interest-rate" id="rate">
-                  <span class="percent">%</span>
+                  <input
+                    class="js-number-input"
+                    type="number"
+                    name="interest-rate"
+                    id="rate"
+                    max="1000"
+                    min="0"
+                    required
+                  />
+                  <span class="rate-js percent">%</span>
                 </div>
-              </div>
+                <p class="rate-error-text error hide"></p>
+              </div>          
             </div>
+
+
             <div class="container container__third">
-             <fieldset>
+              <fieldset>
                 <legend>Mortgage Type</legend>
-                <label class="radio_btn repayment">
-                  <input type="radio" name="type" id="repayment">
+                <label class="radio_btn js-repayment repayment">
+                  <input
+                    class="radio-input"
+                    type="radio"
+                    name="type"
+                    id="repayment"
+                    required
+                  />
                   Repayment
                 </label>
-                
-                <label class="radio_btn interest">
-                  <input type="radio" name="type" id="interest-only">
+
+                <label class="radio_btn js-interest-only interest">
+                  <input
+                    class="radio-input"
+                    type="radio"
+                    name="type"
+                    id="interest-only"
+                  />
                   Interest Only
                 </label>
-             </fieldset>
+                <p class="repayment-error-text error hide"></p>
+              </fieldset>
             </div>
+
+
             <div class="container container__last">
               <button type="submit" class="btn-center">
-                <img src="assets/images/icon-calculator.svg" alt="calculator">
+                <img src="assets/images/icon-calculator.svg" alt="calculator" />
                 Calculate Repayments
               </button>
             </div>
@@ -76,23 +131,40 @@
       </div>
       <div class="card card--result">
         <div class="card--result__empty">
-          <img src="/assets/images/illustration-empty.svg" alt="">
-          <h2> Results shown here</h2>
-          <p> 
-            Complete the form and click “calculate repayments” to see what 
-            your monthly repayments would be.
+          <img src="/assets/images/illustration-empty.svg" alt="" />
+          <h2>Results shown here</h2>
+          <p>
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
           </p>
         </div>
+
+        <!-- <div class="card--result__filled">
+          <p class="title">Your results</p>
+          <p class="info">
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </p>
+          <div class="result--container">
+            <p>Your monthly repayments</p>
+            <p class="js-monthly result--container__monthly">£1,797.74</p>
+            <hr class="horizontal-rule"/>
+            <p class="above-total">Total you'll pay over the term</p>
+            <p class="js-total result--container__total">£539,332.94</p>
+          </div>
+        </div> -->
       </div>
-  </main>
+    </main>
 
-  <footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
-  </footer>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
 
-  <script src="https://kit.fontawesome.com/c28bd26120.js" crossorigin="anonymous"></script>
-</body>
+    <script src="/src/main.js"></script>
+  </body>
 </html>

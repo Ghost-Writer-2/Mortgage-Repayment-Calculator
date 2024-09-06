@@ -25,6 +25,22 @@
       display: grid;
       grid-template-columns: 1fr;
       column-gap: 20px;
+
+      &__div {
+        margin-top: 20px;
+      }
+
+      & .error-text {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__last {
+      justify-content: center;
+
+      .btn-center {
+        width: 100%;
+      }
     }
   }
 }

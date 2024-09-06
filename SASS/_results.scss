@@ -2,6 +2,7 @@
   &__empty {
     text-align: center;
     color: $white;
+    margin: auto 0;
 
     h2  {
       margin-bottom: 20px;
@@ -12,5 +13,59 @@
       font-size: 0.9rem;
       color: $slate-100;
     }
+  }
+
+  &__filled {
+    p.title {
+      @include font-weight(700);
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    p.info {
+      margin-bottom: 40px;
+      color: $slate-300;
+    }
+  }
+}
+
+
+.result--container {
+  position: relative;
+  background-color: mix(black, $slate-900, 40);
+  padding: 1rem;
+  padding-top: 2rem;
+  width: 100%;
+  color: $slate-300;
+  border-top: 5px solid $lime;
+  border-radius: 10px;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  p.above-total {
+    margin-bottom: 8px;
+  }
+
+  .horizontal-rule {
+    height: 1px;
+    border-width: 0;
+    color: $white;
+    background-color: $white;
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+
+  #{&}__monthly {
+    color: $lime;
+    font-size: 2.8rem;
+    @include font-weight(700);
+  }
+
+  #{&}__total {
+    @include font-weight(700);
+    color: $white;
   }
 }

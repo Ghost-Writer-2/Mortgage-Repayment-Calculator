@@ -34,3 +34,7 @@ $slate-900: hsl(202, 55%, 16%);
 @mixin font-weight($value: 500) {
   font-weight: $value;
 };
+
+.hide {
+  display: none;
+}

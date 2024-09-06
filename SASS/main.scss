@@ -26,8 +26,9 @@ main {
   }
 
   &--result {
-    padding: 60px;
-    @include flexCenter(column, center, center);
+    padding: 30px;
+    padding-top: 50px;
+    @include flexCenter(column, center, default);
     background-color: $slate-900;
     border-radius: 15px;
     border-top-left-radius: 0;
