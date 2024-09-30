@@ -103,11 +103,11 @@
 
     label.classList.add("green");
 
-    if (repayment.classList.contains("green") && element === RADIO_BTN[0]) {
+    if (label.classList.contains("green") && element === RADIO_BTN[0]) {
       interest.classList.remove("green");
     }
 
-    if (interest.classList.contains("green") && element === RADIO_BTN[1]) {
+    if (label.classList.contains("green") && element === RADIO_BTN[1]) {
       repayment.classList.remove("green");
     }
   }
@@ -209,7 +209,7 @@
 
     results.innerHTML = `
        <div class="card--result__empty">
-          <img src="/assets/images/illustration-empty.svg" alt="" />
+          <img src="./assets/images/illustration-empty.svg" alt="" />
           <h2>Results shown here</h2>
           <p>
             Complete the form and click “calculate repayments” to see what your
