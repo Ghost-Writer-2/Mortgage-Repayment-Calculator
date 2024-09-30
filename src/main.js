@@ -28,7 +28,7 @@
     }
   });
 
-  // removes error if valid
+  // removes error from number inputs if valid
   NUMBER_INPUTS.forEach((input) => {
     const error_text = document.querySelector(`.${input.id}-error-text`);
     const span = document.querySelector(`.${input.id}-js`);
@@ -44,6 +44,7 @@
     });
   });
 
+  // removes error from radio inputs if valid
   RADIO_BTN.forEach((input) => {
     const error_text = document.querySelector(`.repayment-error-text`);
 
@@ -58,7 +59,7 @@
 
   /****************************************** error function *****************************/
   function showError() {
-    // number inputs
+    // number inputs error indicators
     NUMBER_INPUTS.forEach((input) => {
       const error_text = document.querySelector(`.${input.id}-error-text`);
       const span = document.querySelector(`.${input.id}-js`);
@@ -83,7 +84,7 @@
       }
     });
 
-    // radio buttons
+    // radio buttons error indicators
     RADIO_BTN.forEach((input) => {
       const error_text = document.querySelector(`.repayment-error-text`);
 
